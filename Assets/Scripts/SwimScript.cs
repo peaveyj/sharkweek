@@ -14,11 +14,15 @@ public class SwimScript : MonoBehaviour {
 	public float swimPoint = -3.0f;
 	// <summary> Cooldown in seconds between swims </summary>
 	public float swimCooldown = 0f;
+	// <summary> Multiplier for gravity when out of the water </summary>
+	public float outOfWaterGravityModifier = 3.0f;
 
 	private float startingGravity;
+	private float startingDrag;
 
 	void Awake() {
 		startingGravity = rigidbody2D.gravityScale;
+		startingDrag = rigidbody2D.drag;
 	}
 
 	// Use this for initialization
@@ -37,6 +41,14 @@ public class SwimScript : MonoBehaviour {
 			rigidbody2D.velocity = Vector2.zero;
 			rigidbody2D.gravityScale = 0;
 			transform.position = new Vector2(transform.position.x, swimPoint);
+		}
+
+		if (transform.position.y >= topOfWaterPoint) {
+			rigidbody2D.gravityScale = startingGravity * outOfWaterGravityModifier;
+			rigidbody2D.drag = 0;
+		} else {
+			rigidbody2D.gravityScale = startingGravity;
+			rigidbody2D.drag = startingDrag;
 		}
 
 		// Swim
