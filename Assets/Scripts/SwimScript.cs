@@ -16,13 +16,18 @@ public class SwimScript : MonoBehaviour {
 	public float swimCooldown = 0f;
 	// <summary> Multiplier for gravity when out of the water </summary>
 	public float outOfWaterGravityModifier = 3.0f;
+	// <summary> This defines the relationship between the upward and downward movement and the angle of the shark </summary>
+	public float velocityToAngleModifier = 20.0f;
 
 	private float startingGravity;
 	private float startingDrag;
 
+	private Transform transform;
+
 	void Awake() {
 		startingGravity = rigidbody2D.gravityScale;
 		startingDrag = rigidbody2D.drag;
+		transform = rigidbody2D.transform;
 	}
 
 	// Use this for initialization
@@ -57,6 +62,8 @@ public class SwimScript : MonoBehaviour {
 			rigidbody2D.velocity = Vector2.up * swimForce;
 			rigidbody2D.gravityScale = startingGravity;
 		}
+
+		transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rigidbody2D.velocity.y * velocityToAngleModifier);
     }
 
 	// <summary> Is the shark ready to swim again? </summary>
