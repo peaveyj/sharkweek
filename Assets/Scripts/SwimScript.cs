@@ -5,7 +5,7 @@ using System;
 public class SwimScript : MonoBehaviour {
 
 	// <summary> Upward force of a swim </summary>
-	public float swimForce = 10.0f;
+	public float swimForce = 5.0f;
 	// <summary> Time between swims </summary>
 	public float swimRate = 0.5f;
 	// <summary> Y position of the top of the water </summary>
