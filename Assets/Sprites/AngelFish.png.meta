@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: efa8eaafa2e914f43848a9a2b2c6680c
+guid: baf4d6a4b79b9904ea62e98436c537cc
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -45,40 +45,76 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: chomp_0
+    - name: AngelFish_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 10
-        width: 128
-        height: 128
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: chomp_1
+    - name: AngelFish_1
       rect:
         serializedVersion: 2
-        x: 167
-        y: 10
-        width: 128
-        height: 128
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: chomp_2
+    - name: AngelFish_2
       rect:
         serializedVersion: 2
-        x: 318
-        y: 7
-        width: 128
-        height: 128
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: chomp_3
+    - name: AngelFish_3
       rect:
         serializedVersion: 2
-        x: 469
-        y: 8
-        width: 128
-        height: 128
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AngelFish_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AngelFish_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AngelFish_6
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AngelFish_7
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
   spritePackingTag: 
