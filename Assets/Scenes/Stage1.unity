@@ -240,7 +240,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 381387924}
   - 212: {fileID: 381387925}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,6 +492,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1399170158}
   - {fileID: 618828716}
   - {fileID: 1318802340}
   - {fileID: 381387924}
@@ -591,7 +592,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1.20000005
   m_AngularDrag: .0500000007
+<<<<<<< HEAD
+  m_GravityScale: 1
+=======
   m_GravityScale: .200000003
+>>>>>>> f48e6ff91fd0fd8b072e76d88b6a4fe965e1be25
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -608,13 +613,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733510596bd434f43bd3a984aa94db90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swimForce: 3
+  swimForce: 300
   swimRate: 0
   topOfWaterPoint: 1.29999995
   swimPoint: -3
   swimCooldown: 0
   outOfWaterGravityModifier: 2
+<<<<<<< HEAD
+--- !u!1 &1399170157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1399170158}
+  m_Layer: 0
+  m_Name: EnemyGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1399170158
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1399170157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 719084353}
+=======
   velocityToAngleModifier: 20
+>>>>>>> f48e6ff91fd0fd8b072e76d88b6a4fe965e1be25
 --- !u!1 &1537424525
 GameObject:
   m_ObjectHideFlags: 0

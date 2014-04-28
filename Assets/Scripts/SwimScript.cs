@@ -5,7 +5,7 @@ using System;
 public class SwimScript : MonoBehaviour {
 
 	// <summary> Upward force of a swim </summary>
-	public float swimForce = 5.0f;
+	public float swimForce = 300.0f;
 	// <summary> Time between swims </summary>
 	public float swimRate = 0.5f;
 	// <summary> Y position of the top of the water </summary>
@@ -59,7 +59,8 @@ public class SwimScript : MonoBehaviour {
 		// Swim
 		if (CanSwim && Input.GetButtonDown("Jump")) {
 			swimCooldown = swimRate;
-			rigidbody2D.velocity = Vector2.up * swimForce;
+			rigidbody2D.AddForce(new Vector2(0f, swimForce));
+			//rigidbody2D.velocity = Vector2.up * swimForce;
 			rigidbody2D.gravityScale = startingGravity;
 		}
 
