@@ -19,8 +19,11 @@ public class EnemyHealthScript : MonoBehaviour {
 		if (otherCollider.gameObject.name == "shark_head") {
 			health--;
 			if (health <= 0) {
-				Destroy(gameObject, 0.5f);
+				this.Recycle();
 			}
+		}
+		else if (otherCollider.gameObject.name == "leftEdge") {
+			this.Recycle();
 		}
 	}
 }
