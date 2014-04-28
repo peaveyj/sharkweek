@@ -592,7 +592,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1.20000005
   m_AngularDrag: .0500000007
+<<<<<<< HEAD
   m_GravityScale: 1
+=======
+  m_GravityScale: .200000003
+>>>>>>> f48e6ff91fd0fd8b072e76d88b6a4fe965e1be25
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -615,6 +619,7 @@ MonoBehaviour:
   swimPoint: -3
   swimCooldown: 0
   outOfWaterGravityModifier: 2
+<<<<<<< HEAD
 --- !u!1 &1399170157
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +646,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 719084353}
+=======
+  velocityToAngleModifier: 20
+>>>>>>> f48e6ff91fd0fd8b072e76d88b6a4fe965e1be25
 --- !u!1 &1537424525
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EmenyHealthScript : MonoBehaviour {
+public class EnemyHealthScript : MonoBehaviour {
 
 	public int health = 1;
 
