@@ -23,11 +23,13 @@ public class SwimScript : MonoBehaviour {
 	private float startingDrag;
 
 	private Transform transform;
+	private PlayerHealth playerHealth;
 
 	void Awake() {
 		startingGravity = rigidbody2D.gravityScale;
 		startingDrag = rigidbody2D.drag;
 		transform = rigidbody2D.transform;
+		playerHealth = GameObject.Find ("player").GetComponent<PlayerHealth> ();
 	}
 
 	// Use this for initialization
@@ -68,5 +70,5 @@ public class SwimScript : MonoBehaviour {
     }
 
 	// <summary> Is the shark ready to swim again? </summary>
-	public bool CanSwim { get { return (swimRate <= 0f || swimCooldown <= 0f) && transform.position.y < topOfWaterPoint; } }
+	public bool CanSwim { get { return (swimRate <= 0f || swimCooldown <= 0f) && !playerHealth.IsDead && transform.position.y < topOfWaterPoint; } }
 }
