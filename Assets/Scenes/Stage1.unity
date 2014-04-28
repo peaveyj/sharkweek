@@ -988,7 +988,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: f6987c3b69f88df43961de09411f8350, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ddd6b269dc2e8342a8fa4a12d4d1d1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!95 &1537424528
 Animator:
@@ -1085,8 +1085,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2058409487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5533365, y: -.656800628, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: -.817958236, y: .0996610373, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1318802340}
 --- !u!95 &2058409489
@@ -1124,7 +1124,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: efa8eaafa2e914f43848a9a2b2c6680c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f91257b3cf386b14899280950e31406e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2058409491
 MonoBehaviour:
@@ -1146,8 +1146,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1, y: .5}
-  m_Center: {x: .5, y: -.100000001}
+  m_Size: {x: 3, y: 1.5}
+  m_Center: {x: 3, y: -1}
 --- !u!1 &2135618403
 GameObject:
   m_ObjectHideFlags: 0
