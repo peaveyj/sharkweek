@@ -5,6 +5,8 @@ public class EnemyHealthScript : MonoBehaviour {
 
 	public int health = 1;
 
+	private bool isInMouth = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -17,6 +19,9 @@ public class EnemyHealthScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
 		if (otherCollider.gameObject.name == "shark_head") {
+			isInMouth = true;
+		}
+		else if (otherCollider.gameObject.name == "shark_mouth") {
 			health--;
 			if (health <= 0) {
 				this.Recycle();
