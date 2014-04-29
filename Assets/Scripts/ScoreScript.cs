@@ -7,14 +7,14 @@ public class ScoreScript : MonoBehaviour {
 	// <summary> How many points to increase per second </summary>
 	public int scoreIncreaseSpeed = 100;
 
-	private int score = 0;
+	private static int score = 0;
 	private int renderedScore = 0;
 
 	private GUIText scoreText;
 
 	// Use this for initialization
 	void Start () {
-		scoreText = gameObject.GetComponent<GUIText>();
+		scoreText = GameObject.Find("ScoreText").GetComponent<GUIText>();
 	}
 	
 	// Update is called once per frame
@@ -28,6 +28,10 @@ public class ScoreScript : MonoBehaviour {
 
 	public int addScore(int scoreToAdd) {
 		score += scoreToAdd;
+		return score;
+	}
+
+	public static int getScore() {
 		return score;
 	}
 }

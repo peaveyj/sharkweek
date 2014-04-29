@@ -13,6 +13,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: ducky
   m_TagString: Untagged
@@ -82,6 +83,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  worthScore: 100
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a407bcff292a7643bb0b023db190db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 11400002, guid: 19d37d29ac909a14abceaaadf6cd2ba3, type: 2}
+  projectileSpawnTime: {x: 3, y: 15}
+  projectileSpawnOffset: {x: 0, y: .200000003}
+  maxDrops: -1
+  initialForce: {x: 0, y: 0}
+  attackAnimation: ThrowCan
+  dropDelay: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

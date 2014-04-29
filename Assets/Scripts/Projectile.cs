@@ -3,11 +3,18 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
+	public float timeToExplode = 2.0f;
+
 	private PlayerHealth playerHealth;
+	private float explodeTimer = 2.0f;
+
+	public ExplosionScript explosionScriptPrefab;
 
 	// Use this for initialization
 	void Start () {
 		playerHealth = GameObject.Find ("player").GetComponent<PlayerHealth> ();
+		explosionScriptPrefab.CreatePool ();
+		explodeTimer = 0f;
 	}
 	
 	// Update is called once per frame
@@ -17,15 +24,13 @@ public class Projectile : MonoBehaviour {
 		if (!isVisible) {
 			this.Recycle();
 		}
-	}
-	
-	void OnTriggerEnter2D(Collider2D otherCollider) {
-		string otherName = otherCollider.gameObject.name;
-		switch (otherName) {
-			case "shark_body":
-				playerHealth.Hit(1);
-				this.Recycle();
-				break;
+
+		explodeTimer += Time.deltaTime;
+		if (explodeTimer >= timeToExplode) {
+			explosionScriptPrefab.Spawn(transform.position);
+			this.Recycle();
 		}
 	}
+	
+
 }

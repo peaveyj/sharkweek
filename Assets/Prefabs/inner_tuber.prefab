@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 95: {fileID: 9500000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: inner_tuber
   m_TagString: Untagged
@@ -84,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  worthScore: 100
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,6 +99,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 10, y: 10}
   direction: {x: -.300000012, y: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a407bcff292a7643bb0b023db190db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 11400000, guid: 9282410e8b073ae4b838056a47e1c4a0, type: 2}
+  projectileSpawnTime: {x: 1, y: 4}
+  projectileSpawnOffset: {x: -.400000006, y: -1.60000002}
+  maxDrops: 1
+  initialForce: {x: -5, y: -10}
+  attackAnimation: ThrowCan
+  dropDelay: .50999999
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

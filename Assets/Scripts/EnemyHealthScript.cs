@@ -10,11 +10,13 @@ public class EnemyHealthScript : MonoBehaviour {
 
 	private ScoreScript score;
 	private PlayerHealth playerHealth;
+	private Sounds sounds;
 
 	// Use this for initialization
 	void Start () {
-		score = GameObject.Find("ScoreText").GetComponent<ScoreScript>();
+		score = GameObject.Find("Scripts").GetComponent<ScoreScript>();
 		playerHealth = GameObject.Find ("player").GetComponent<PlayerHealth> ();
+		sounds = GameObject.FindObjectOfType<Sounds> ();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,19 @@ public class EnemyHealthScript : MonoBehaviour {
 			isInMouth = true;
 		}
 		else if (otherCollider.gameObject.name == "shark_mouth" && isInMouth && !playerHealth.IsDead) {
+			sounds.Play("omnom" + Random.Range(1,2));
+
+			string soundToPlay = null;
+			if (gameObject.name.StartsWith("inner_tuber")) {
+				soundToPlay = "fscream1";
+			} else if (gameObject.name.StartsWith("surfer_dude")) {
+				soundToPlay = "scared1";
+			}
+
+			if (null != soundToPlay) {
+				sounds.Play(soundToPlay);
+			}
+
 			health--;
 			if (health <= 0) {
 				this.Recycle();
