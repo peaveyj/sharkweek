@@ -25,6 +25,7 @@ public class MenuScript : MonoBehaviour {
 		{
 			// On Click, load the first level.
 			// "Stage1" is the name of the first scene we created.
+			ScoreScript.resetScore();
 			Application.LoadLevel("Stage1");
 		}
 	}

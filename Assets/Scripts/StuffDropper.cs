@@ -16,6 +16,10 @@ public class StuffDropper : MonoBehaviour {
 	private int numDropped = 0;
 	private bool isDropping = false;
 
+	void OnEnable() {
+		numDropped = 0;
+	}
+
 	void Awake () {
 		numDropped = 0;
 	}

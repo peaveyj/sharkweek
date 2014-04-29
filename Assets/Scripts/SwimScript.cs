@@ -22,13 +22,11 @@ public class SwimScript : MonoBehaviour {
 	private float startingGravity;
 	private float startingDrag;
 
-	private Transform transform;
 	private PlayerHealth playerHealth;
 
 	void Awake() {
 		startingGravity = rigidbody2D.gravityScale;
 		startingDrag = rigidbody2D.drag;
-		transform = rigidbody2D.transform;
 		playerHealth = GameObject.Find ("player").GetComponent<PlayerHealth> ();
 	}
 

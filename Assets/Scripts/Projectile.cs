@@ -6,30 +6,37 @@ public class Projectile : MonoBehaviour {
 	public float timeToExplode = 2.0f;
 
 	private PlayerHealth playerHealth;
-	private float explodeTimer = 2.0f;
 
 	public ExplosionScript explosionScriptPrefab;
+
+	void OnEnable() {
+		StartCoroutine(Fall());
+	}
+	
+	void OnDisable() {
+		StopAllCoroutines();
+	}
 
 	// Use this for initialization
 	void Start () {
 		playerHealth = GameObject.Find ("player").GetComponent<PlayerHealth> ();
 		explosionScriptPrefab.CreatePool ();
-		explodeTimer = 0f;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	IEnumerator Fall () {
 		Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
-		bool isVisible = GeometryUtility.TestPlanesAABB(planes, renderer.bounds);
-		if (!isVisible) {
-			this.Recycle();
+		bool isVisible = true;
+		float explodeTimer = 0f;
+		while (isVisible && explodeTimer < timeToExplode) {
+			isVisible = GeometryUtility.TestPlanesAABB(planes, renderer.bounds);
+			explodeTimer += Time.deltaTime;
+			yield return 0;
 		}
-
-		explodeTimer += Time.deltaTime;
 		if (explodeTimer >= timeToExplode) {
 			explosionScriptPrefab.Spawn(transform.position);
-			this.Recycle();
 		}
+		this.Recycle ();
 	}
 	
 

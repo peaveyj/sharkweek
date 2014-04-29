@@ -14,13 +14,20 @@ public class ExplosionScript : MonoBehaviour {
 		timeLeft = explosionTime;
 		playerHealth = GameObject.Find ("player").GetComponent<PlayerHealth> ();
 	}
+
+	void OnEnable()
+	{
+		StartCoroutine(Shrink());
+	}
 	
-	// Update is called once per frame
-	void Update () {
-		timeLeft -= Time.deltaTime;
-		if (timeLeft <= 0) {
-			this.Recycle();
+	IEnumerator Shrink()
+	{
+		timeLeft = explosionTime;
+		while (timeLeft > 0) {
+			timeLeft -= Time.deltaTime;
+			yield return 0;
 		}
+		this.Recycle();
 	}
 
 	void OnTriggerEnter2D(Collider2D otherCollider) {
@@ -28,7 +35,6 @@ public class ExplosionScript : MonoBehaviour {
 		switch (otherName) {
 		case "shark_body":
 			playerHealth.Hit(1);
-			this.Recycle();
 			break;
 		}
 	}

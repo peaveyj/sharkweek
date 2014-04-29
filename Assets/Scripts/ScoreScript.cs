@@ -34,4 +34,8 @@ public class ScoreScript : MonoBehaviour {
 	public static int getScore() {
 		return score;
 	}
+
+	public static void resetScore() {
+		score = 0;
+	}
 }
